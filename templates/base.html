@@ -12,17 +12,21 @@ href="http://localhost:49198/css/base_common.css"/>
 <body>
 <div id = "header">
     <img id ="header_img" src = "http://ss12.info/image/banner.gif"/>
+    {% block head %}{% end %}
 </div>
  <div id ="maincontent">
-       
+       {% block body %}{% end %}
 </div>
-<div id = 'footerwrap">
+<div id = "footerwrap">
     <div id = "footer">
      <div id= "info">
+     {% block body %}{% end %}
      </div>
       <div id = "sitelinks">
+      {% block body %}{% end %}
       </div>
      <div id = "update">
+     {% block body %}{% end %}
       </div>
 </div>
 </div>
