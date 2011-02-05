@@ -1,9 +1,9 @@
-#Resources for this project
-
 = Links =
 
-[http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site/ Things a web developer should know before building a public site]
+  * [http://stackoverflow.com/questions/72394/what-should-a-developer-know-before-building-a-public-web-site/ Things a web developer should know before building a public site]
 
-[http://svnbook.red-bean.com/en/1.5/index.html svn book]
+  * [http://svnbook.red-bean.com/en/1.5/index.html svn book]
 
-[http://diveintohtml5.org/ html5 book]
+  * [http://diveintohtml5.org/ html5 book]
+
+  * [http://developer.yahoo.com/yui/3/ YUI 3]
