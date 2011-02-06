@@ -74,7 +74,8 @@ class CardHandlerNew(BaseHandler):
 
             self.db.execute(
                             "INSERT INTO CARDS (DECKID,QUESTION,ANSWER) VALUES (%s,%s,%s)",
-                            deckid, question, answer)	
+                            deckid, question, answer)
+            self.redirect("cardsindecklist?deckid="+deckid)
 
 
 class ViewDeckHandler(tornado.web.RequestHandler):
