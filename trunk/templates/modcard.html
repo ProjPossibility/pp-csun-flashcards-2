@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<form name="input" action="{{request.path}}" method="post">
+
+<fieldset>
+<legend>Create a Card</legend>
+<label for="cardquestion">Question: </label><input id="cardquestion" type="text" value="{{entry.QUESTION}}" name="cardquestion" />
+<br>
+<label for="cardanswer">Answer: </label><input id="cardanswer" type="text" value="{{entry.ANSWER}}" name="cardanswer" />
+<br>
+<input type="hidden" value="{{entry.DECKID}}" id="deckid" name="deckid">
+<input type="hidden" value="{{entry.ID}}" id="cardid" name="cardid">
+<input type="submit" value="Create" />
+</fieldset>
+
+</form> 
+
+{% end %}
