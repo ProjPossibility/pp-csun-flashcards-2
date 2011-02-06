@@ -36,7 +36,7 @@ class CardsInDeckListHandler(BaseHandler):
         self.render("cardsindecklist.html", entries=entries, deckid=deckid)
     def post(self):
         deckid = self.get_argument("deckid")
-        self.redirect("newcard",deckid)
+        self.redirect("newcard?deckid="+deckid)
         
         
         
