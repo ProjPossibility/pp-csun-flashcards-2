@@ -88,6 +88,10 @@ class ViewCardHandler(tornado.web.RequestHandler):
     def get(self):
 	       self.render("viewcard.html")
 
+class MathHandler(tornado.web.RequestHandler):
+    def get(self):
+	       self.render("math.html")
+
 
 class Application(tornado.web.Application):
     def __init__(self):
@@ -97,10 +101,12 @@ class Application(tornado.web.Application):
 		(r"/newdeck", NewDeckHandler),
 		(r"/viewdeck", ViewDeckHandler),
 		(r"/newcard", NewCardHandler),
-        (r"/cardsindecklist", CardsInDeckListHandler),
+        	(r"/cardsindecklist", CardsInDeckListHandler),
 		(r"/viewcard", ViewCardHandler),
 		(r"/newcard", NewCardHandler),
-        (r"/deckslist", DecksListHandler)]
+        	(r"/deckslist", DecksListHandler)
+		(r"/math", MathHandler)]
+
 
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
