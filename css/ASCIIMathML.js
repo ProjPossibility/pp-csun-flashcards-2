@@ -341,7 +341,7 @@ function compareNames(s1,s2) {
 
 var AMnames = []; //list of input symbols
 
-/*function AMinitSymbols() {
+function AMinitSymbols() {
   var texsymbols = [], i;
   for (i=0; i<AMsymbols.length; i++)
     if (AMsymbols[i].tex) 
@@ -351,7 +351,7 @@ var AMnames = []; //list of input symbols
   AMsymbols.sort(compareNames);
   for (i=0; i<AMsymbols.length; i++) AMnames[i] = AMsymbols[i].input;
 }
-*/
+
 var AMmathml = "http://www.w3.org/1998/Math/MathML";
 
 function AMcreateElementMathML(t) {
