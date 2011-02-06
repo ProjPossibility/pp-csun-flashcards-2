@@ -98,7 +98,6 @@ class DeleteCardHandler(BaseHandler):
     def get(self):
         cardid = self.get_argument("cardid")
         deckid = self.get_argument("deckid")
-        print cardid
         self.db.execute("DELETE FROM CARDS WHERE ID=%s",cardid)
         self.redirect("cardsindecklist?deckid="+deckid)
 
