@@ -1,4 +1,6 @@
 html { background-color: Aqua;}
-#header_img {position: fixed; left: 33%}
-#maincontent {float: left; display: block; overflow: auto}
+#header {float: left; width: 100%}
+#header_img {left: 33%; position: relative}
+#maincontent {float: left; display: block; overflow: auto; width: 100%}
+#deckwrap {margin-left: auto; margin-right: auto; background-color: White;}
 
