@@ -11,9 +11,9 @@ from tornado.options import define, options
 
 define("port", default=8888, help="run on the given port", type=int)
 define("mysql_host", default="127.0.0.1:3306", help="blog database host")
-define("mysql_database", default="ss12", help="blog database name")
+define("mysql_database", default="SS12", help="blog database name")
 define("mysql_user", default="root", help="blog database user")
-define("mysql_password", default="", help="blog database password")
+define("mysql_password", default="fatass", help="blog database password")
 
 class HomeHandler(tornado.web.RequestHandler):
     def get(self):
@@ -26,7 +26,7 @@ class BaseHandler(tornado.web.RequestHandler):
     
 class DecksListHandler(BaseHandler):
     def get(self):
-        entries = self.db.query("SELECT * FROM deck")
+        entries = self.db.query("SELECT * FROM DECK")
         self.render("deckslist.html", entries=entries)
         
 class DeckHandler(tornado.web.RequestHandler):
