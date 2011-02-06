@@ -1,9 +1,14 @@
 ﻿html {background-color: #870000}
+a{ text-decoration: none; color: #FFFFFF }
 #header {float: left; width: 100%; background-color: #262626}
-#header_img {}
-button.btn{color:#870000; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; }
+input.btn{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; }
+input.btn_menu{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 43px; margin: 30px 30px 30px 30px}
+#mydecks{float: left;}
+#create{cursor: default; color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 43px; margin: 30px 30px 30px 30px; width: 210px; border: 3px solid white}
+#mydecks{cursor: default; color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 43px; margin: 30px 30px 30px 30px; width: 210px; border: 3px solid white}
 #right_col{background-color: #262626; height: 100%; width: 71px; float: right}
 #left_col{background-color: #262626; height: 100%; width: 71px; float: left}
+#button_wrap{position: relative; top: 129px; left: 42%; width: 0}
 #maincontent {float: left; display: block; width: 100%; height: 100%; background-color: #870000}
 #deckwrap {margin-left: auto; margin-right: auto;  height: 200px; width: 650px; position: relative; top: 21%}
 #card {left: 13%; height: 100%; position: relative; text-align: center; background-color: White; width: 73%; border: 3px #000000 solid}
