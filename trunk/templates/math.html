@@ -2,38 +2,23 @@
 {%block title%}math{%end%}
 {%block main%}
 
-<title></title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<script type="text/javascript" src="{{static_url("ASCIIMathML.js")}}"></script> 
-<!--script type="text/javascript">mathfontsize=".9em"</script-->
-<style type="text/css">
-#menu, #title, #subtitle, #author {text-align: center}
-body {font-family: Arial; background-color:beige}
-p,table {font-family: Times}
-</style>
-<style type="text/css" charset="utf-8">
-</style><style type="text/css" charset="utf-8">
+<script type="text/javascript" src="{{static_url("ASCIIMathML.js")}}"></script>
+<textarea id="in" rows="3" cols="40"
+onkeyup="calculate('in','out')"></textarea></td></tr>
+<span id="out"><math title=" ="><mstyle displaystyle="true"
+fontfamily="serif"
+mathcolor="blue"><mn></mn><mo>=</mo></mstyle></math></span>
 
-</style></head><body>
+<button id="math_submit">Submit</button>
 
-<tbody><tr></tr>
-
-<tr><td>
-<textarea id="in" rows="3" cols="40" onkeyup="calculate('in','out')"></textarea></td></tr>
-<tr><td height="50">Result: &nbsp; &nbsp; <span id="out"><span style="font-size: 1em; font-family: serif;"><math title=" ="><mstyle displaystyle="true" fontfamily="serif" mathcolor="blue"><mn></mn><mo>=</mo></mstyle></math></span> </span></td></tr>
-
-<form name="input" action="" method="get">
-<input type="submit" value="Submit" />
-</form> 
-
-</tbody></table>
-
-
-
-</table></div>
-
-<script> </script>
-
-
+<script>
+   $(document).ready(function(){
+       $('#math_submit').click(function () {
+           $.get('/mathparse', {'text': $('#in').val()}, function (data) {
+               console.log(data);
+           });
+       });
+   });
+</script>
 
 {% end %}
