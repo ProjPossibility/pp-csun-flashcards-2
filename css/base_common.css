@@ -1,6 +1,18 @@
-html { background-color: Aqua;}
+﻿html { background-color: Aqua;}
 #header {float: left; width: 100%}
 #header_img {left: 33%; position: relative}
-#maincontent {float: left; display: block; overflow: auto; width: 100%}
-#deckwrap {margin-left: auto; margin-right: auto; background-color: White;}
+#maincontent {float: left; display: block; width: 100%; height: 100%}
+#deckwrap {margin-left: auto; margin-right: auto;  height: 200px; width: 650px; position: relative; top: 21%}
+#card {left: 13%; height: 100%; position: relative; text-align: center; background-color: White; width: 73%}
+#card_text{top:45%; position: relative; left: -9%}
+#prev_card{float: left; position: relative; top: 45%}
+#next_card{float: right; position: relative; top: -55%; right: 5%}
+#answer{position: relative; left: 40%}
+#footerwrap { 
+}
 
+div#footer {
+}
+
+#footer #info {
+}
