@@ -99,7 +99,7 @@ class DeleteCardHandler(BaseHandler):
         cardid = self.get_argument("cardid")
         deckid = self.get_argument("deckid")
         self.db.execute("DELETE FROM CARDS WHERE ID=%s",cardid)
-        self.redirect("cardsindecklist?deckid="+deckid)
+        self.redirect("/cardsindecklist?deckid="+deckid)
 
 class ViewDeckHandler(tornado.web.RequestHandler):
     def get(self):
