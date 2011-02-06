@@ -1,14 +1,13 @@
 ﻿{% extends "base.html" %}
-
-{%block main%} 
-       <div id = "deckwrap"> 
-           <button id = "prev_card" value = "Previous" class="btn">Previous</button>
+{%block title%}Flash Cards{%end%}
+{%block main%}
+   <div id = "deckwrap"> 
+           <button id = "prev_card" value = "Previous" class="btn")>Previous</button>
             <div id = "card">
-                <div id="card_text">{{entries[0].QUESTION}}</div>
+                <textarea id="card_text" tabindex="1" readonly="readonly">{{entries[0].QUESTION}}</textarea>
             </div>
             <button id ="answer" value = "View Answer" class ="btn">View Answer</button>
            <button id = "next_card" value = "Next" class="btn">Next</button>
        </div>
-</div>
-{%end%}
 
+{%end%}
