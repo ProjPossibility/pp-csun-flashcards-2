@@ -32,12 +32,19 @@ class DecksListHandler(BaseHandler):
 class CardsInDeckListHandler(BaseHandler):
     def get(self):
         deckid = self.get_argument("deckid")
-        entries = self.db.query("SELECT * FROM CARDS WHERE DECKID=%s",deckid)
-        self.render("cardsindecklist.html", entries=entries)
+        entries = self.db.query("SELECT * FROM CARDS WHERE DECKID=%s", deckid)
+        self.render("cardsindecklist.html", entries=entries, deckid=deckid)
+    def post(self):
+        deckid = self.get_argument("deckid")
+        self.redirect("newcard",deckid)
+        
+        
         
 class DeckHandler(tornado.web.RequestHandler):
     def get(self):
 	       self.render("deck.html")
+           
+
 
 class NewDeckHandler(BaseHandler):
     	def get(self):
@@ -49,22 +56,24 @@ class NewDeckHandler(BaseHandler):
 		    entry = self.db.get("SELECT * FROM DECK WHERE name = %s", str(name))
 		    if entry: raise tornado.web.HTTPError(404) #duplicate
 		self.db.execute(
-		"INSERT INTO DECK (userid,name) VALUES (%s,%s)", 
-		1,name)	
+		"INSERT INTO DECK (userid,name) VALUES (%s,%s)",
+		1, name)	
 
 class NewCardHandler(BaseHandler):
-    	def get(self):
-	       self.render("newcard.html")
+    def get(self):
+        deckid = self.get_argument("deckid")
+        self.render("newcard.html",deckid=deckid)
+    def post(self):
+            question = self.get_argument("cardquestion", None)
+            answer = self.get_argument("cardanswer", None)
+            deckid = self.get_argument("deckid")
+            if question:
+                entry = self.db.get("SELECT * FROM CARDS WHERE QUESTION = %s", str(question))
+            if entry: raise tornado.web.HTTPError(404) #duplicate<input type="hidden" value="{{deckid.value}}" name="deckid" id="deckid" />
 
-	def post(self):
-		question = self.get_argument("cardquestion", None)
-		answer = self.get_argument("cardanswer", None)
-		if question:
-		    entry = self.db.get("SELECT * FROM DECK WHERE QUESTION = %s", str(question))
-		    if entry: raise tornado.web.HTTPError(404) #duplicate
-		self.db.execute(
-		"INSERT INTO CARDS (DECKID,QUESTION,ANSWER) VALUES (%s,%s,%s)", 
-		1,question,answer)	
+            self.db.execute(
+                            "INSERT INTO CARDS (DECKID,QUESTION,ANSWER) VALUES (%s,%s,%s)",
+                            deckid, question, answer)	
 
 
 class ViewDeckHandler(tornado.web.RequestHandler):
@@ -90,12 +99,12 @@ class Application(tornado.web.Application):
 		(r"/newcard", NewCardHandler),
         (r"/cardsindecklist", CardsInDeckListHandler),
 		(r"/viewcard", ViewCardHandler),
-		(r"/newcard",NewCardHandler),
+		(r"/newcard", NewCardHandler),
         (r"/deckslist", DecksListHandler)]
 
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
-		    debug = True,static_path=os.path.join(os.path.dirname(__file__), "css"),
+		    debug=True, static_path=os.path.join(os.path.dirname(__file__), "css"),
         )
         tornado.web.Application.__init__(self, handlers, **settings)
     
