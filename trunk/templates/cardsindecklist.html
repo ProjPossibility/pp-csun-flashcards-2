@@ -1,6 +1,11 @@
 {% extends "base.html" %}
 {%block title%}Cards in Deck{%end%}
 {%block main%}
+<div id="add_button">
+     <li>
+                <a href="/newdeck">Add Deck</a>
+    </li>
+ </div>
 {% for entry in entries %}
   <div class="list_class">
     <div id="button_col">
@@ -21,13 +26,4 @@
         <br>
  </div>
 {% end %}
-<div class="list_class">
-    <div id="button_col">
-<div class="newcard_class">
-        <li>
-                <a href="/newcard?deckid={{deckid}}">Add Card</a>
-            </li>
-        </div>
-</div>
-</div>
 {%end%}
