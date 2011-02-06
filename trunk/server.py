@@ -68,7 +68,7 @@ class Application(tornado.web.Application):
 		(r"/viewdeck", ViewDeckHandler),
 		(r"/newcard", NewCardHandler),
 		(r"/viewcard", ViewCardHandler),
-        (r"/deckslist", DecksListHandler)]
+        	(r"/deckslist", DecksListHandler)]
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
 		    debug = True,static_path=os.path.join(os.path.dirname(__file__), "css"),
