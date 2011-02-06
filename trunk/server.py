@@ -51,13 +51,14 @@ class NewCardHandler(BaseHandler):
 	       self.render("newcard.html")
 
 	def post(self):
-		name = self.get_argument("name", None)
-		if name:
-		    entry = self.db.get("SELECT * FROM DECK WHERE name = %s", str(name))
+		question = self.get_argument("cardquestion", None)
+		answer = self.get_argument("cardanswer", None)
+		if question:
+		    entry = self.db.get("SELECT * FROM DECK WHERE QUESTION = %s", str(question))
 		    if entry: raise tornado.web.HTTPError(404) #duplicate
 		self.db.execute(
-		"INSERT INTO DECK (userid,name) VALUES (%s,%s)", 
-		1,name)	
+		"INSERT INTO CARDS (DECKID,QUESTION,ANSWER) VALUES (%s,%s,%s)", 
+		1,question,answer)	
 
 
 class ViewDeckHandler(tornado.web.RequestHandler):
