@@ -124,6 +124,8 @@ class NewDeckHandler(BaseHandler):
 		entries = self.db.query("SELECT * FROM DECK")
 		self.redirect("newcard?deckid="+str(entries[len(entries)-1]))
 
+
+
 class CardHandlerNew(BaseHandler):
     def get(self):
         deckid = self.get_argument("deckid", None)
@@ -141,6 +143,24 @@ class CardHandlerNew(BaseHandler):
                             "INSERT INTO CARDS (DECKID,QUESTION,ANSWER) VALUES (%s,%s,%s)",
                             deckid, question, answer)
             self.redirect("cardsindecklist?deckid="+deckid)
+
+class ModifyCardHandler(BaseHandler):
+	def get(self):
+		deckid = self.get_argument("deckid", None)
+		cardid = self.get_argument("cardid", None)
+		entries = self.db.query("SELECT * FROM CARDS WHERE ID=%s",cardid)
+		print len(entries)
+		entry = entries[0]
+		self.render("modcard.html", entry=entry)
+		
+	def post(self):
+		deckid = self.get_argument("deckid", None)
+		cardid = self.get_argument("cardid", None)
+		question = self.get_argument("cardquestion", None)
+		answer = self.get_argument("cardanswer", None)
+		self.db.execute("UPDATE CARDS SET QUESTION=%s, ANSWER=%s WHERE ID=%s", question, answer, cardid)
+		self.redirect("cardsindecklist?deckid="+deckid)
+	
 
 class DeleteDeckHandler(BaseHandler):
     def get(self):
@@ -183,6 +203,7 @@ class Application(tornado.web.Application):
 		(r"/newcard", CardHandlerNew),
         (r"/deldeck", DeleteDeckHandler),
         (r"/delcard", DeleteCardHandler),
+        (r"/modcard", ModifyCardHandler),
         (r"/cardsindecklist", CardsInDeckListHandler),
 		(r"/viewcard", ViewCardHandler),
         (r"/deckslist", DecksListHandler),
