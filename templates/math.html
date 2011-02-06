@@ -1,5 +1,6 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html><head>
+{% extends "base.html" %}
+{%block title%}math{%end%}
+{%block main%}
 
 <title></title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -16,16 +17,23 @@ p,table {font-family: Times}
 </style></head><body>
 
 <tbody><tr></tr>
-<tr></tr>
+
 <tr><td>
 <textarea id="in" rows="3" cols="40" onkeyup="calculate('in','out')"></textarea></td></tr>
 <tr><td height="50">Result: &nbsp; &nbsp; <span id="out"><span style="font-size: 1em; font-family: serif;"><math title=" ="><mstyle displaystyle="true" fontfamily="serif" mathcolor="blue"><mn></mn><mo>=</mo></mstyle></math></span> </span></td></tr>
+
+<form name="input" action="" method="get">
+<input type="submit" value="Submit" />
+</form> 
+
 </tbody></table>
+
+
 
 </table></div>
 
+<script> </script>
 
 
 
-
-<div style="left: 6px; top: -100px; width: 995px; height: 2px; -moz-transform: none; -moz-transform-origin: 52px 52px;" class="firebugHighlight"></div><div style="left: 999px; top: -100px; width: 2px; height: 387.1px; -moz-transform: none; -moz-transform-origin: -941px 52px;" class="firebugHighlight"></div><div style="left: 6px; top: 285.1px; width: 995px; height: 2px; -moz-transform: none; -moz-transform-origin: 52px -333.1px;" class="firebugHighlight"></div><div style="left: 6px; top: -100px; width: 2px; height: 387.1px; -moz-transform: none; -moz-transform-origin: 52px 52px;" class="firebugHighlight"></div><div style="left: -2px; top: -2px; width: 1011px; height: 2px; -moz-transform: none; -moz-transform-origin: 52px 52px;" class="firebugHighlight"></div><div style="left: 1007px; top: -2px; width: 2px; height: 351.1px; -moz-transform: none; -moz-transform-origin: -957px 52px;" class="firebugHighlight"></div><div style="left: -2px; top: 347.1px; width: 1011px; height: 2px; -moz-transform: none; -moz-transform-origin: 52px -297.1px;" class="firebugHighlight"></div><div style="left: -2px; top: -2px; width: 2px; height: 351.1px; -moz-transform: none; -moz-transform-origin: 52px 52px;" class="firebugHighlight"></div></body></html>
+{% end %}

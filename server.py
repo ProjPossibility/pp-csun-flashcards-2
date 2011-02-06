@@ -19,6 +19,60 @@ class HomeHandler(tornado.web.RequestHandler):
     def get(self):
 	       self.render("home.html")
 
+class MathParser(tornado.web.RequestHandler):
+	def get(self):
+		self.render("home.html")
+
+	def parseMathXL(inString):
+
+		def parse(x):
+			if x == '0':
+				return 'zero '
+			elif x == '1':
+				return 'one '
+			elif x == '2':
+				return 'two '
+			elif x == '3':
+				return 'three '
+			elif x == '4':
+				return 'four '
+			elif x == '5':
+				return 'five '
+			elif x == '6':
+				return 'six '
+			elif x == '7':
+				return 'seven '
+			elif x == '8':
+				return 'eight '
+			elif x == '9':
+				return 'nine '
+			elif x == '-':
+				return 'minus '
+			elif x == '+':
+				return 'plus '
+			elif x == '*':
+				return 'times '
+			elif x == '/':
+				return 'divided by '
+			elif x == '(':
+				return 'open paranthesis '
+			elif x == ')':
+				return 'close paranthesis '
+			elif x == '^':
+				return 'to the power of '
+			else:
+				return x + " "
+
+		outString = ""
+
+		for i in range(len(inString)):
+			outString += parse(s[i])
+
+		return outString
+
+
+
+
 class BaseHandler(tornado.web.RequestHandler):
     @property
     def db(self):
@@ -131,7 +185,8 @@ class Application(tornado.web.Application):
         (r"/cardsindecklist", CardsInDeckListHandler),
 		(r"/viewcard", ViewCardHandler),
         (r"/deckslist", DecksListHandler),
-		(r"/math", MathHandler)]
+		(r"/math", MathHandler),
+		(r"/mathparse", MathParser)]
 
 
         settings = dict(
