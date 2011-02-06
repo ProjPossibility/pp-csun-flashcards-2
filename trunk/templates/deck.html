@@ -1,18 +1,6 @@
-﻿
-<LINK rel="stylesheet" type="text/css"
-href="http://localhost:49198/css/base_common.css"/> 
-<META content="charset=utf-8" />
-<html>
-<head>
-    <title></title>
-</head>
-<body>
-<div id = "header">
-    <img id ="header_img" src = "http://ss12.info/image/banner.gif"/>
+﻿{% extends "base.html" %}
 
-</div>
- <div id ="maincontent">
- <div id = "left_col"></div>
+{%block main%} <div id = "left_col"></div>
  <div id="right_col"></div>
        <div id = "deckwrap"> 
            <button id = "prev_card" value = "Previous" class="btn">Previous</button>
@@ -22,25 +10,5 @@ href="http://localhost:49198/css/base_common.css"/>
             <button id ="answer" value = "View Answer" class ="btn">View Answer</button>
            <button id = "next_card" value = "Next" class="btn">Next</button>
        </div>
-</div>
-<div id = "footerwrap">
-    <div id = "footer">
-     <div id= "info">
-  
-     </div>
-      <div id = "sitelinks">
-  
-      </div>
-     <div id = "update">
-   
-      </div>
-</div>
-</div>
-</body>
-</html>
-
-
-
-
-
+</div>{%end%}
 
