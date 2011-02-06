@@ -1,4 +1,5 @@
 ﻿html {background-color: #870000}
+h1 { color: #FFFFFF; font-size: 30px;}
 a{ text-decoration: none; color: #FFFFFF }
 #header {float: left; width: 100%; background-color: #262626}
 input.btn{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; }
