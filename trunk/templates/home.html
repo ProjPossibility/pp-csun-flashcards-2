@@ -1,10 +1,17 @@
-{% extends "base.html" %}
-
-{% block main %}
-
-<input  onclick="location.href='newdeck'" type="button" value="Create Deck"></button>
-<input  onclick="location.href='deckslist'" type="button" value="My Decks"></button>
-
-
-
-{% end %}
+﻿{% extends "base.html" %}
+{%block title%}Home page{%end%}
+{%block main%}   <div id = "left_col"></div>
+ <div id="right_col"></div>
+ <div id = "button_wrap">
+    <div id="create"  class="btn_menu">
+           <li>
+             <a href="/newdeck">New Deck</a>
+           </li>
+    </div>
+    <div id="mydecks" class='btn_menu'>
+        <li>
+            <a href="/decklist">My Decks</a>
+        </li>
+    </div>
+</div>
+{%end%}
