@@ -1,8 +1,13 @@
 {% extends "base.html" %}
-{%block title%}Deck list{%end%}
+{%block title%}Deck List{%end%}
 {%block main%}
 {% for entry in entries %}
-  <div class="list_class">
+ <div id="add_button">
+     <li>
+                <a href="/newdeck">Add Deck</a>
+    </li>
+ </div>
+        <div class="list_class">
     <div id="button_col">
         
         <div class="del_class">
@@ -16,14 +21,5 @@
         </div>
         <br>
  </div>
-{% end %}
-<div class="list_class">
-    <div id="button_col">
-<div class="newcard_class">
-        <li>
-                <a href="/newdeck">Add Deck</a>
-            </li>
-        </div>
-</div>
-</div>
-{%end%}
+ {%end%}
+ {%end%}
