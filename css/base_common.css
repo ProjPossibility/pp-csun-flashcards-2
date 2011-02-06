@@ -13,15 +13,16 @@ input.btn_menu{color:#FFFFFF; background-color: #262626;font: bold small 'trebuc
 #maincontent {float: left; display: block; width: 100%; height: 100%; background-color: #870000}
 #deckwrap {margin-left: auto; margin-right: auto;  height: 200px; width: 650px; position: relative; top: 21%}
 #card {left: 13%; height: 100%; position: relative; text-align: center; background-color: White; width: 73%; border: 3px #000000 solid}
-#card_text{top:45%; position: relative; left: -9%; border: 0px none; background-color: #ffffff;}
+#card_text{top:45%; position: relative; left: -9% border: 0px none;}
 #prev_card{float: left; position: relative; top: 45%}
 #next_card{float: right; position: relative; bottom: 117px; right: 5%}
 #answer{position: relative; left: 40%}
-#modify,.mod_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 71px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
+#modify,.mod_class, #add_button{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 89px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
 #delete,.del_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 71px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
 #newcard,.newcard_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 88px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
 #list_item,.list_class{ margin-top: 50px; margin-left: 80px}
 a.decks_list_links{float:left; font-size: 27px;}
+
 #footerwrap { 
 }
 
