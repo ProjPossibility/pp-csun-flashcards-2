@@ -12,12 +12,15 @@ href="http://localhost:49198/css/base_common.css"/>
 <body>
 <div id = "header">
     <img id ="header_img" src = "http://ss12.info/image/banner.gif"/>
-    {% block head %}{% end %}
+    {%block head%}{%end%}
 </div>
  <div id ="maincontent">
-       {% block main content %}{% end %}
+       {%block main%}{%end%}
 </div>
-
+<div id = "footerwrap">
+    <div id = "footer">
+     {%block footer%}{%end%}
+</div>
 </div>
 </body>
 </html>
