@@ -1,12 +1,12 @@
-<html>
-<body>
+{% extends "base.html" %}
+
+{% block main %}
 
 <h1>newdeck</h1>
 
 <form name="input" action="html_form_action.asp" method="get">
-Deck Name: <input type="text" name="user" />
+<label for="name">Deck Name: </label> <input id="name" type="text" name="name" />
 <input type="submit" value="Submit" />
 </form> 
 
-</body>
-</html> 
+{% end %}
