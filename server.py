@@ -61,7 +61,7 @@ class Application(tornado.web.Application):
         (r"/deckslist", DecksListHandler)]
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
-		debug = True
+		    debug = True,static_path=os.path.join(os.path.dirname(__file__), "css"),
         )
         tornado.web.Application.__init__(self, handlers, **settings)
     
