@@ -1,7 +1,7 @@
 {% extends base.html %}
 {% block main %}
 {% for entry in entries %}
-    <a href="cardsindecklist?deckid={{entry.ID}}">{{entry.QUESTION}}</a><br>
+    <a href="card?deckid={{deckid}}&cardid={{entry.ID}}">{{entry.QUESTION}}</a><br>
 {% end %}
 
 <br><br><br>
