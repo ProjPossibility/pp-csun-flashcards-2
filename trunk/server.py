@@ -14,10 +14,6 @@ class HomeHandler(tornado.web.RequestHandler):
     def get(self):
 	self.render("home.html")
     
-    def post(self):
-        title = self.get_argument("title")
-        print title
-
 class DeckHandler(tornado.web.RequestHandler):
     def get(self):
 	self.render("deck.html")
