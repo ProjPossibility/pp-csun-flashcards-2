@@ -1,7 +1,14 @@
-<html>
-<body>
+{% extends "base.html" %}
 
-<h1>newcard</h1>
+{% block main %}
 
-</body>
-</html> 
+<form name="input" action="/newcard" method="post">
+<fieldset>
+<legend>Create a Card</legend>
+<label for="question">Question: </label> <input id="question" type="text" name="question" />
+<label for="answer">Answer: </label> <input id="answer" type="text" name="answer" />
+<input type="submit" value="Create" />
+</fieldset>
+</form> 
+
+{% end %}
