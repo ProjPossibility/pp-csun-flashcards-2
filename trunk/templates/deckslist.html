@@ -1,4 +1,8 @@
 {% extends base.html %}
-{% block body %}
-{% entries.length %}
+{% block main %}
+
+{% for entry in entries %}
+    <a href="deck?deckid={{entry.ID}}?cardid=1">{{entry.NAME}}</a><br>
+{% end %}
+{{ len(entries) }}
 {% end %}
