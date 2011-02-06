@@ -1,7 +1,6 @@
 ﻿{% extends "base.html" %}
-{%block title%}Flash Cards{%end%}
-{%block main%}
-   <div id = "deckwrap"> 
+{%block title%}Flash Card{%end%}
+{%block main%} <div id = "deckwrap"> 
            <button id = "prev_card" value = "Previous" class="btn")>Previous</button>
             <div id = "card">
                 <textarea id="card_text" tabindex="1" readonly="readonly">{{entries[0].QUESTION}}</textarea>
@@ -9,5 +8,7 @@
             <button id ="answer" value = "View Answer" class ="btn">View Answer</button>
            <button id = "next_card" value = "Next" class="btn">Next</button>
        </div>
-
+       {%end%}
+ {%body script%}
+    $('#answer').click()(function(){ document.getElementById(this).innerhtml='{{entries[0].ANSWER}}'});
 {%end%}
