@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{%block title%}Deck list{%end%}
+{%block title%}Cards in Deck{%end%}
 {%block main%}
 {% for entry in entries %}
   <div class="list_class">
@@ -16,7 +16,7 @@
         </div>
         </div>
         <div >
-        <a href="cardsindecklist?deckid={{entry.ID}}" class="decks_list_links">{{entry.QUESTION}}</a>
+        <a href="card?deckid={{entry.DECKID}}&cardid={{entry.ID}}" class="decks_list_links">{{entry.QUESTION}}</a>
         </div>
         <br>
  </div>
@@ -25,7 +25,7 @@
     <div id="button_col">
 <div class="newcard_class">
         <li>
-                <a href="/delcard?cardid={{entry.ID}}">Add Card</a>
+                <a href="/newcard?deckid={{deckid}}">Add Card</a>
             </li>
         </div>
 </div>

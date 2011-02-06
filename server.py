@@ -128,9 +128,9 @@ class Application(tornado.web.Application):
 		(r"/newcard", CardHandlerNew),
         (r"/deldeck", DeleteDeckHandler),
         (r"/delcard", DeleteCardHandler),
-        	(r"/cardsindecklist", CardsInDeckListHandler),
+        (r"/cardsindecklist", CardsInDeckListHandler),
 		(r"/viewcard", ViewCardHandler),
-        	(r"/deckslist", DecksListHandler),
+        (r"/deckslist", DecksListHandler),
 		(r"/math", MathHandler)]
 
 
