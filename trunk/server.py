@@ -104,7 +104,7 @@ class Application(tornado.web.Application):
         	(r"/cardsindecklist", CardsInDeckListHandler),
 		(r"/viewcard", ViewCardHandler),
 		(r"/newcard", NewCardHandler),
-        	(r"/deckslist", DecksListHandler)
+        	(r"/deckslist", DecksListHandler),
 		(r"/math", MathHandler)]
 
 
