@@ -18,6 +18,7 @@ input.btn_menu{color:#FFFFFF; background-color: #262626;font: bold small 'trebuc
 #answer{position: relative; left: 40%}
 #modify,.mod_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 71px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
 #delete,.del_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 71px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
+#newcard,.newcard_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 88px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
 #list_item,.list_class{ margin-top: 50px; margin-left: 80px}
 a.decks_list_links{float:left; font-size: 27px;}
 #footerwrap { 
