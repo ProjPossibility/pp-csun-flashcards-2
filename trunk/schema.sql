@@ -23,10 +23,10 @@ DROP TABLE IF EXISTS `CARDS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `CARDS` (
-  `ID` int(11) NOT NULL DEFAULT '0',
   `DECKID` int(11) DEFAULT NULL,
   `QUESTION` varchar(1000) DEFAULT NULL,
   `ANSWER` varchar(1000) DEFAULT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -48,12 +48,12 @@ DROP TABLE IF EXISTS `DECK`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `DECK` (
-  `ID` int(11) NOT NULL DEFAULT '0',
   `USERID` int(11) DEFAULT NULL,
   `CARDID` int(11) DEFAULT NULL,
   `NAME` varchar(80) DEFAULT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`ID`)
-) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,6 +62,7 @@ CREATE TABLE `DECK` (
 
 LOCK TABLES `DECK` WRITE;
 /*!40000 ALTER TABLE `DECK` DISABLE KEYS */;
+INSERT INTO `DECK` VALUES (1,NULL,'test',1);
 /*!40000 ALTER TABLE `DECK` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -73,9 +74,9 @@ DROP TABLE IF EXISTS `USERS`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `USERS` (
-  `ID` int(11) NOT NULL DEFAULT '0',
   `NAME` varchar(80) DEFAULT NULL,
   `EMAIL` varchar(80) DEFAULT NULL,
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
   PRIMARY KEY (`ID`)
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -98,4 +99,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2011-02-05 16:32:53
+-- Dump completed on 2011-02-05 20:37:00
