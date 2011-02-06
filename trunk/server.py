@@ -59,14 +59,14 @@ class NewDeckHandler(BaseHandler):
 		"INSERT INTO DECK (userid,name) VALUES (%s,%s)",
 		1, name)	
 
-class NewCardHandler(BaseHandler):
+class CardHandlerNew(BaseHandler):
     def get(self):
-        deckid = self.get_argument("deckid")
+        deckid = self.get_argument("deckid", None)
         self.render("newcard.html",deckid=deckid)
     def post(self):
             question = self.get_argument("cardquestion", None)
             answer = self.get_argument("cardanswer", None)
-            deckid = self.get_argument("deckid")
+            deckid = self.get_argument("deckid", None)
             if question:
                 entry = self.db.get("SELECT * FROM CARDS WHERE QUESTION = %s", str(question))
             if entry: raise tornado.web.HTTPError(404) #duplicate<input type="hidden" value="{{deckid.value}}" name="deckid" id="deckid" />
@@ -100,10 +100,9 @@ class Application(tornado.web.Application):
 		(r"/deck", DeckHandler),
 		(r"/newdeck", NewDeckHandler),
 		(r"/viewdeck", ViewDeckHandler),
-		(r"/newcard", NewCardHandler),
+		(r"/newcard", CardHandlerNew),
         	(r"/cardsindecklist", CardsInDeckListHandler),
 		(r"/viewcard", ViewCardHandler),
-		(r"/newcard", NewCardHandler),
         	(r"/deckslist", DecksListHandler),
 		(r"/math", MathHandler)]
 
