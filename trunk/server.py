@@ -121,6 +121,7 @@ class NewDeckHandler(BaseHandler):
 		    entry = self.db.get("SELECT * FROM DECK WHERE name = %s", str(name))
 		    if entry: raise tornado.web.HTTPError(404) #duplicate
 		self.db.execute("INSERT INTO DECK (userid,name) VALUES (%s,%s)",1, name)
+        entries = self.db.query("SELECT * FROM DECK")
 		self.redirect("deckslist")
 
 class CardHandlerNew(BaseHandler):
