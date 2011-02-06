@@ -2,12 +2,22 @@
 {%block main%}
 <div class="mod_class">
             <li>
-                <a href="">Delete</a>
+            <form name="del" action="{{request.path}}" method="post">
+            <input type="hidden" value="{{deckid}}" id="deckid" name="deckid">
+<input type="hidden" value="{{cardid}}" id="cardid" name="cardid">
+<input type="hidden" value="confirm" name="result" id="result"
+<input type="submit" value="Delete" />
+</form>
+                
             </li>
         </div>
         <div class="del_class">
         <li>
-                <a href="">Cancel</a>
+                           <form name="del" action="{{request.path}}" method="post">
+            <input type="hidden" value="{{deckid}}" id="deckid" name="deckid">
+<input type="hidden" value="{{cardid}}" id="cardid" name="cardid">
+<input type="hidden" value="cancel" name="result" id="result"
+<input type="submit" value="Cancel" />
             </li>
         </div>
 {% end %}
