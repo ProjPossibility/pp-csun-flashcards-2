@@ -1,12 +1,26 @@
-{% extends "base.html" %}
-{%block title%}Deck List{%end%}
-{%block main%}
- <div id="add_button">
+ <!DOCTYPE html>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-context-min.css">
+<LINK rel="stylesheet" type="text/css"
+href="/css/base_common.css"/> 
+<META content="charset=utf-8" />
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+<div id = "header">
+    <img id ="header_img" src = "http://ss12.info/image/banner.gif"/>
+
+</div>
+ <div id ="maincontent">
+ <div id = "left_col"></div>
+ <div id="right_col"></div>
+       <div id="add_button">
      <li>
                 <a href="/newdeck">Add Deck</a>
     </li>
  </div>
-{% for entry in entries %}
         <div class="list_class">
     <div id="button_col">
         
@@ -15,11 +29,22 @@
                 <a href="deldeck?deckid={{entry.ID}}">Delete</a>
             </li>
         </div>
+        <div class="view_class">
+            <li>
+            <a href="cardsindecklist?deckid={{entry.ID}}">View Deck</a>
+        </li>
+        </div>
         </div>
         <div >
-        <a href="cardsindecklist?deckid={{entry.ID}}" class="decks_list_links">{{entry.NAME}}</a>
+        <a class="decks_list_links">{{entry.NAME}}</a>
         </div>
         <br>
  </div>
- {%end%}
- {%end%}
+</div>
+<div id = "footerwrap">
+    <div id = "footer">
+</div>
+</div>
+</body>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+</html>
