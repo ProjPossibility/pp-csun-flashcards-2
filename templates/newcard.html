@@ -3,13 +3,14 @@
 {% block main %}
 
 <form name="input" action="/newcard" method="post">
-{{deckid}}
+
 <fieldset>
 <legend>Create a Card</legend>
 <label for="cardquestion">Question: </label><input id="cardquestion" type="text" name="cardquestion" />
 <br>
 <label for="cardanswer">Answer: </label><input id="cardanswer" type="text" name="cardanswer" />
 <br>
+<input type="hidden" value="{{deckid}}" id="deckid" name="deckid">
 <input type="submit" value="Create" />
 </fieldset>
 
