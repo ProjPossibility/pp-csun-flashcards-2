@@ -20,7 +20,8 @@ class HomeHandler(tornado.web.RequestHandler):
 	       self.render("home.html")
 
 class BaseHandler(tornado.web.RequestHandler):
-    def get(self):
+    @property
+    def db(self):
         return self.application.db
     
 class DecksListHandler(BaseHandler):
