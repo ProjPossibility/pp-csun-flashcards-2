@@ -44,9 +44,17 @@ class CardHandler(BaseHandler):
     def get(self):
         deckid = self.get_argument("deckid")
         cardid = self.get_argument("cardid")
-        entries = self.db.query("SELECT * FROM CARDS WHERE ID=%s", cardid)
-        print "GOTITE"
-        self.render("card.html", entries=entries, cardid=cardid)
+        
+        cardindex = 9
+        entries = self.db.query("SELECT * FROM CARDS WHERE DECKID=%s", deckid)
+        for i in range(0,len(entries)):
+            print entries[i].ID
+            print cardid
+            if entries[i].ID == cardid:
+                print "found"
+                cardindex = i
+        print cardindex
+        self.render("card.html", entries=entries, cardid=cardid, cardindex=cardindex)
            
 
 
