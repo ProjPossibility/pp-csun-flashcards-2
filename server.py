@@ -20,10 +20,9 @@ class HomeHandler(tornado.web.RequestHandler):
 	       self.render("home.html")
 
 class MathParser(tornado.web.RequestHandler):
-	def get(self):
-		self.render("home.html")
 
-	def parseMathXL(inString):
+
+	def parseMathXL(self, inString):
 
 		def parse(x):
 			if x == '0':
@@ -48,8 +47,6 @@ class MathParser(tornado.web.RequestHandler):
 				return 'nine '
 			elif x == '-':
 				return 'minus '
-			elif x == '+':
-				return 'plus '
 			elif x == '*':
 				return 'times '
 			elif x == '/':
@@ -66,10 +63,13 @@ class MathParser(tornado.web.RequestHandler):
 		outString = ""
 
 		for i in range(len(inString)):
-			outString += parse(s[i])
+			outString += parse(inString[i])
 
 		return outString
 
+	def get(self):
+		text = self.get_argument("text")
+		self.write('<textarea>'+self.parseMathXL(text)+'</textarea>')  
 
 
 
