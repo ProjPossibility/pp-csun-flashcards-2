@@ -12,27 +12,32 @@ define("port", default=8888, help="run on the given port", type=int)
 
 class HomeHandler(tornado.web.RequestHandler):
     def get(self):
-	self.render("home.html")
-    
+	       self.render("home.html")
+
+class DecksListHandler(tornado.web.RequestHandler):
+    def get(self):
+        entries = self.db.query("SELECT * FROM deck")
+        self.render("deckslist.html", entries=entries)
+        
 class DeckHandler(tornado.web.RequestHandler):
     def get(self):
-	self.render("deck.html")
+	       self.render("deck.html")
 
 class NewDeckHandler(tornado.web.RequestHandler):
     def get(self):
-	self.render("newdeck.html")
+	       self.render("newdeck.html")
 
 class ViewDeckHandler(tornado.web.RequestHandler):
     def get(self):
-	self.render("viewdeck.html")
+	       self.render("viewdeck.html")
 
 class NewCardHandler(tornado.web.RequestHandler):
     def get(self):
-	self.render("newcard.html")
+	       self.render("newcard.html")
 
 class ViewCardHandler(tornado.web.RequestHandler):
     def get(self):
-	self.render("viewcard.html")
+	       self.render("viewcard.html")
 
 
 class Application(tornado.web.Application):
@@ -44,6 +49,7 @@ class Application(tornado.web.Application):
 		(r"/viewdeck", ViewDeckHandler),
 		(r"/newcard", NewCardHandler),
 		(r"/viewcard", ViewCardHandler),
+        (r"/deckslist", DecksListHandler)
 	]
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
