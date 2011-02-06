@@ -9,6 +9,6 @@
            <button id = "next_card" value = "Next" class="btn">Next</button>
        </div>
        {%end%}
- {%body script%}
+ {%block script%}
     $('#answer').click()(function(){ document.getElementById(this).innerhtml='{{entries[0].ANSWER}}'});
 {%end%}
