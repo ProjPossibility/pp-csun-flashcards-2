@@ -13,6 +13,10 @@ define("port", default=8888, help="run on the given port", type=int)
 class HomeHandler(tornado.web.RequestHandler):
     def get(self):
 	self.render("home.html")
+    
+    def post(self):
+    title = self.get_argument("title")
+    Print title
 
 class DeckHandler(tornado.web.RequestHandler):
     def get(self):

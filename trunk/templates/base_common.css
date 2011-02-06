@@ -1,12 +1,4 @@
-﻿html { background-color: Aqua;}
+html { background-color: Aqua;}
 #header_img {position: fixed; left: 33%}
 #maincontent {float: left; display: block; overflow: auto}
 
-#footerwrap {
-}
-
-div#footer {
-}
-
-#footer #info {
-}
