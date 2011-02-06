@@ -40,9 +40,13 @@ class CardsInDeckListHandler(BaseHandler):
         
         
         
-class DeckHandler(tornado.web.RequestHandler):
+class CardHandler(BaseHandler):
     def get(self):
-	       self.render("deck.html")
+        deckid = self.get_argument("deckid")
+        cardid = self.get_argument("cardid")
+        entries = self.db.query("SELECT * FROM CARDS WHERE ID=%s", cardid)
+        print "GOTITE"
+        self.render("card.html", entries=entries, cardid=cardid)
            
 
 
@@ -55,9 +59,7 @@ class NewDeckHandler(BaseHandler):
 		if name:
 		    entry = self.db.get("SELECT * FROM DECK WHERE name = %s", str(name))
 		    if entry: raise tornado.web.HTTPError(404) #duplicate
-            
 		self.db.execute("INSERT INTO DECK (userid,name) VALUES (%s,%s)",1, name)	
-        self.redirect("deckslist")
 
 class CardHandlerNew(BaseHandler):
     def get(self):
@@ -99,7 +101,7 @@ class Application(tornado.web.Application):
     def __init__(self):
         handlers = [
 		(r"/", HomeHandler),
-		(r"/deck", DeckHandler),
+		(r"/card", CardHandler),
 		(r"/newdeck", NewDeckHandler),
 		(r"/viewdeck", ViewDeckHandler),
 		(r"/newcard", CardHandlerNew),
