@@ -153,6 +153,14 @@ class ConfirmDeleteHandler(BaseHandler):
 		deckid = self.get_argument("deckid", None)
 		cardid = self.get_argument("selfid", None)
 		self.render("confirmdelete.html", cardid=cardid, deckid=deckid)
+	def post(self):
+		deckid = self.get_argument("deckid", None)
+		cardid = self.get_argument("cardid", None)
+		result = self.get_argument("result", None)
+		if result == "confirm"
+			if cardid == None
+				#DELDECK
+			elif 
 
 class ViewDeckHandler(tornado.web.RequestHandler):
     def get(self):
