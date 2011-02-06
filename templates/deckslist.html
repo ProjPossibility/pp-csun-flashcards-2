@@ -1,3 +1,33 @@
+{% extends "base.html" %}
+{%block title%}Deck List{%end%}
+{%block main%}
+ <div id="add_button">
+     <li>
+                <a href="/newdeck">Add Deck</a>
+    </li>
+ </div>
+ {% for entry in entries %}
+     <div class="list_class">
+    <div id="button_col">
+        
+        <div class="del_class">
+        <li>
+                <a href="deldeck?deckid={{entry.ID}}">Delete</a>
+            </li>
+        </div>
+        <div class="view_class">
+            <li>
+            <a href="cardsindecklist?deckid={{entry.ID}}">View Deck</a>
+        </li>
+        </div>
+        </div>
+        <div >
+        <textarea class="decks_list_links" readonly="readonly">{{entry.NAME}}</textarea>
+        </div>
+        <br>
+ </div>
+ {%end%}
+ {%end%}
  <!DOCTYPE html>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-context-min.css">
@@ -16,30 +46,8 @@ href="/css/base_common.css"/>
  <div id ="maincontent">
  <div id = "left_col"></div>
  <div id="right_col"></div>
-       <div id="add_button">
-     <li>
-                <a href="/newdeck">Add Deck</a>
-    </li>
- </div>
-        <div class="list_class">
-    <div id="button_col">
-        
-        <div class="del_class">
-        <li>
-                <a href="deldeck?deckid={{entry.ID}}">Delete</a>
-            </li>
-        </div>
-        <div class="view_class">
-            <li>
-            <a href="cardsindecklist?deckid={{entry.ID}}">View Deck</a>
-        </li>
-        </div>
-        </div>
-        <div >
-        <a class="decks_list_links">{{entry.NAME}}</a>
-        </div>
-        <br>
- </div>
+      
+    
 </div>
 <div id = "footerwrap">
     <div id = "footer">

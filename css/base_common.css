@@ -22,6 +22,7 @@ input.btn_menu{color:#FFFFFF; background-color: #262626;font: bold small 'trebuc
 #newcard,.newcard_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 88px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
 #list_item,.list_class{ margin-top: 50px; margin-left: 80px}
 a.decks_list_links{float:left; font-size: 27px;}
+textarea.decks_list_links{float:left; font-size: 27px; border:0px none;background-color: #870000; height: 35px; color: #ffffff}
 
 #footerwrap { 
 }
