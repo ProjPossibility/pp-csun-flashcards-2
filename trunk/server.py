@@ -67,6 +67,7 @@ class CardHandlerNew(BaseHandler):
             question = self.get_argument("cardquestion", None)
             answer = self.get_argument("cardanswer", None)
             deckid = self.get_argument("deckid", None)
+            print "%s %s %s", question, answer, deckid
             if question:
                 entry = self.db.get("SELECT * FROM CARDS WHERE QUESTION = %s", str(question))
             if entry: raise tornado.web.HTTPError(404) #duplicate<input type="hidden" value="{{deckid.value}}" name="deckid" id="deckid" />
