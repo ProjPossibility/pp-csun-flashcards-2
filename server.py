@@ -29,6 +29,12 @@ class DecksListHandler(BaseHandler):
         entries = self.db.query("SELECT * FROM DECK")
         self.render("deckslist.html", entries=entries)
         
+class CardsInDeckListHandler(BaseHandler):
+    def get(self):
+        deckid = self.get_argument("deckid")
+        entries = self.db.query("SELECT * FROM CARDS WHERE DECKID=%s",deckid)
+        self.render("cardsindecklist.html", entries=entries)
+        
 class DeckHandler(tornado.web.RequestHandler):
     def get(self):
 	       self.render("deck.html")
@@ -82,9 +88,10 @@ class Application(tornado.web.Application):
 		(r"/newdeck", NewDeckHandler),
 		(r"/viewdeck", ViewDeckHandler),
 		(r"/newcard", NewCardHandler),
+        (r"/cardsindecklist", CardsInDeckListHandler),
 		(r"/viewcard", ViewCardHandler),
 		(r"/newcard",NewCardHandler),
-        	(r"/deckslist", DecksListHandler)]
+        (r"/deckslist", DecksListHandler)]
 
         settings = dict(
             template_path=os.path.join(os.path.dirname(__file__), "templates"),
