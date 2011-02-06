@@ -170,6 +170,12 @@ class DeleteCardHandler(BaseHandler):
         deckid = self.get_argument("deckid")
         self.db.execute("DELETE FROM CARDS WHERE ID=%s",cardid)
         self.redirect("/cardsindecklist?deckid="+deckid)
+        
+class ConfirmDeleteHandler(BaseHandler):
+	def get(self):
+		deckid = self.get_argument("deckid", None)
+		cardid = self.get_argument("selfid", None)
+		self.render("confirmdelete.html", cardid=cardid, deckid=deckid)
 
 class ViewDeckHandler(tornado.web.RequestHandler):
     def get(self):
@@ -197,6 +203,7 @@ class Application(tornado.web.Application):
 		(r"/viewdeck", ViewDeckHandler),
 		(r"/newcard", CardHandlerNew),
         (r"/deldeck", DeleteDeckHandler),
+        (r"/confirmdelete", ConfirmDeleteHandler),
         (r"/delcard", DeleteCardHandler),
         (r"/modcard", ModifyCardHandler),
         (r"/cardsindecklist", CardsInDeckListHandler),

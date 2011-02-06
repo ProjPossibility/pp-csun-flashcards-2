@@ -13,7 +13,7 @@ input.btn_menu{color:#FFFFFF; background-color: #262626;font: bold small 'trebuc
 #maincontent {float: left; display: block; width: 100%; height: 100%; background-color: #870000}
 #deckwrap {margin-left: auto; margin-right: auto;  height: 200px; width: 650px; position: relative; top: 21%}
 #card {left: 13%; height: 100%; position: relative; text-align: center; background-color: White; width: 73%; border: 3px #000000 solid}
-#card_text{top:45%; position: relative; left: -9% border: 0px none;}
+#card_text{top:45%; position: relative; left: -9% ; border: 0; background-color: #fff;}
 #prev_card{float: left; position: relative; top: 45%}
 #next_card{float: right; position: relative; bottom: 117px; right: 5%}
 #answer{position: relative; left: 40%}
