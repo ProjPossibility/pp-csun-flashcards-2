@@ -4,10 +4,10 @@
 
 {% for entry in entries %}
 
- <div >
+ <div class="list_class">
         <a href="cardsindecklist?deckid={{entry.ID}}" class="decks_list_links">{{entry.NAME}}</a>
         
-        <div >
+        <div class="del_class" >
         <li>
                 <a href="/deldeck?deckid={{entry.ID}}">Delete</a>
             </li>
