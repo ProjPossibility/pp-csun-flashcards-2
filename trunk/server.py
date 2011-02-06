@@ -151,16 +151,26 @@ class DeleteCardHandler(BaseHandler):
 class ConfirmDeleteHandler(BaseHandler):
 	def get(self):
 		deckid = self.get_argument("deckid", None)
-		cardid = self.get_argument("selfid", None)
+		cardid = self.get_argument("cardid", None)
 		self.render("confirmdelete.html", cardid=cardid, deckid=deckid)
 	def post(self):
 		deckid = self.get_argument("deckid", None)
 		cardid = self.get_argument("cardid", None)
 		result = self.get_argument("result", None)
-		if result == "confirm"
-			if cardid == None
-				#DELDECK
-			elif 
+		print cardid
+		print deckid
+		if result == "confirm":
+			if str(cardid) == "None":
+				self.redirect("deldeck?deckid="+deckid)
+			else:
+				self.redirect("delcard?deckid="+str(deckid)+"&cardid="+str(cardid))
+		else:
+			if str(cardid) == "None":
+				self.redirect("deckslist")
+			else:
+				self.redirect("cardsindecklist?deckid="+deckid)
+
+		
 
 class ViewDeckHandler(tornado.web.RequestHandler):
     def get(self):
