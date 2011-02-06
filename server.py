@@ -11,9 +11,9 @@ from tornado.options import define, options
 
 define("port", default=8888, help="run on the given port", type=int)
 define("mysql_host", default="127.0.0.1:3306", help="blog database host")
-define("mysql_database", default="blog", help="blog database name")
+define("mysql_database", default="ss12", help="blog database name")
 define("mysql_user", default="root", help="blog database user")
-define("mysql_password", default="fatass", help="blog database password")
+define("mysql_password", default="", help="blog database password")
 
 class HomeHandler(tornado.web.RequestHandler):
     def get(self):
@@ -33,9 +33,18 @@ class DeckHandler(tornado.web.RequestHandler):
     def get(self):
 	       self.render("deck.html")
 
-class NewDeckHandler(tornado.web.RequestHandler):
-    def get(self):
+class NewDeckHandler(BaseHandler):
+    	def get(self):
 	       self.render("newdeck.html")
+
+	def post(self):
+		name = self.get_argument("name", None)
+		if name:
+		    entry = self.db.get("SELECT * FROM DECK WHERE name = %s", str(name))
+		    if entry: raise tornado.web.HTTPError(404) #duplicate
+		self.db.execute(
+		"INSERT INTO DECK (userid,name) VALUES (%s,%s)", 
+		1,name)	
 
 class ViewDeckHandler(tornado.web.RequestHandler):
     def get(self):
