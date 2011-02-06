@@ -59,15 +59,15 @@ class CardHandler(BaseHandler):
 
 
 class NewDeckHandler(BaseHandler):
-    	def get(self):
-	       self.render("newdeck.html")
-
+   	def get(self):
+		self.render("newdeck.html")
 	def post(self):
 		name = self.get_argument("name", None)
 		if name:
 		    entry = self.db.get("SELECT * FROM DECK WHERE name = %s", str(name))
 		    if entry: raise tornado.web.HTTPError(404) #duplicate
-		self.db.execute("INSERT INTO DECK (userid,name) VALUES (%s,%s)",1, name)	
+		self.db.execute("INSERT INTO DECK (userid,name) VALUES (%s,%s)",1, name)
+		self.redirect("deckslist")
 
 class CardHandlerNew(BaseHandler):
     def get(self):
@@ -87,6 +87,20 @@ class CardHandlerNew(BaseHandler):
                             deckid, question, answer)
             self.redirect("cardsindecklist?deckid="+deckid)
 
+class DeleteDeckHandler(BaseHandler):
+    def get(self):
+        deckid = self.get_argument("deckid")
+        self.db.execute("DELETE FROM CARDS WHERE DECKID=%s", deckid)
+        self.db.execute("DELETE FROM DECK WHERE ID=%s", deckid)
+        self.redirect("deckslist")
+
+class DeleteCardHandler(BaseHandler):
+    def get(self):
+        cardid = self.get_argument("cardid")
+        deckid = self.get_argument("deckid")
+        print cardid
+        self.db.execute("DELETE FROM CARDS WHERE ID=%s",cardid)
+        self.redirect("cardsindecklist?deckid="+deckid)
 
 class ViewDeckHandler(tornado.web.RequestHandler):
     def get(self):
@@ -113,6 +127,8 @@ class Application(tornado.web.Application):
 		(r"/newdeck", NewDeckHandler),
 		(r"/viewdeck", ViewDeckHandler),
 		(r"/newcard", CardHandlerNew),
+        (r"/deldeck", DeleteDeckHandler),
+        (r"/delcard", DeleteCardHandler),
         	(r"/cardsindecklist", CardsInDeckListHandler),
 		(r"/viewcard", ViewCardHandler),
         	(r"/deckslist", DecksListHandler),
