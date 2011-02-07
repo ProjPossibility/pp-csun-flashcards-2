@@ -24,56 +24,95 @@ class MathParser(tornado.web.RequestHandler):
 	def parseMathXL(self, inString):
 
 		outString = ""
-
+		previous = False
 		i = 0
 		while(i < len(inString)):
 
+
 			if inString[i] == '-':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'minus '
 
 			elif inString[i] == '*':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'times '
 
+
 			elif inString[i] == '+':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'plus '
 
 			elif inString[i] == '/':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'divided by '
+	
 
 			elif inString[i] == '(':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'open parentheses '
 
 			elif inString[i] == ')':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'close parentheses '
 
 			elif inString[i] == '^':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'to the power of '
 
 			elif inString[i] == 's' and inString[i+1] == 'q' and inString[i+2] == 'r' and inString[i+3] == 't':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'the square root of '
 				i += 3
 
 			elif inString[i] == 'p' and inString[i+1] == 'i':
+				if not previous:
+					outString += " "
+				previous = True
 				outString += 'pi '
 				i+=1
 
 			elif inString[i] == 's' and inString[i+1] == 'i' and inString[i+2] == 'n':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'sine '
 				i += 2
 
 			elif inString[i] == 'c' and inString[i+1] == 'o' and inString[i+2] == 's':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'cosine '
 				i += 2
 
 			elif inString[i] == 't' and inString[i+1] == 'a' and inString[i+2] == 'n':
+				if not previous:
+					outString += " "
+				previous = True
 				outString +=  'tanget '
 				i += 2
 
 			else:
-				outString +=  inString[i] + " "
+				outString +=  inString[i]
+				previous = False
 	
 			i+=1
-
 
 		return outString
 
