@@ -1,42 +1,41 @@
 ﻿<!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
-<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-context-min.css">
-
-<link rel="stylesheet" type="text/css" href="{{static_url("mobile.css")}}" media="only screen and (max-device-width: 480px)"/>
-<link rel="stylesheet" type="text/css" href="{{static_url("base_common.css")}}" media="screen and (min-device-width: 481px)"/>
-<META content="charset=utf-8" />
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
-    <title>{%block title%}{%end%}</title>
-</head>
-<body>
-<div id = "header">
-    <img id ="header_img" src = "http://ss12.info/image/banner.gif"/>
-    {%block head%}{%end%}
-</div>
- <div id ="maincontent">
- <div id = "left_col"></div>
- <div id="right_col">
-	<ul class="nav">
-		<li>
-			<a href="/" title="Home">Home</a>
-		</li>
-		<li>
-			<a href="/newdeck" title="CreateADeck">New Deck</a>
-		</li>
-		<li>
-			<a href="/deckslist" title="myDecks">My Decks</a>
-		</li>
-	</ul>
-</div>
-       {%block main%}{%end%}
-</div>
-<div id = "footerwrap">
-    <div id = "footer">
-     {%block footer%}{%end%}
-</div>
-</div>
-{%block script%}{%end%}
-</body>
+    <head>
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
+        <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-context-min.css">
+        <link rel="stylesheet" type="text/css" href="{{static_url("mobile.css")}}" media="only screen and (max-device-width: 480px)"/>
+        <link rel="stylesheet" type="text/css" href="{{static_url("base_common.css")}}" media="screen and (min-device-width: 481px)"/>
+        <meta content="charset=utf-8" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
+        <title>{%block title%}{%end%}</title>
+    </head>
+    <body>
+        <div id = "header">
+            <img id ="header_img" src = "http://ss12.info/image/banner.gif"/>
+            {%block head%}{%end%}
+        </div>
+        <div id ="maincontent">
+            <div id = "left_col"></div>
+            <div id="right_col">
+                <ul class="nav">
+                    <li>
+                    <a href="/" title="Home">Home</a>
+                    </li>
+                    <li>
+                    <a href="/newdeck" title="CreateADeck">New Deck</a>
+                    </li>
+                    <li>
+                    <a href="/deckslist" title="myDecks">My Decks</a>
+                    </li>
+                </ul>
+            </div>
+            {%block main%}{%end%}
+        </div>
+        <div id = "footerwrap">
+            <div id = "footer">
+                {%block footer%}{%end%}
+            </div>
+        </div>
+        {%block script%}{%end%}
+    </body>
 </html>
