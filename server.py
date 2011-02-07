@@ -80,7 +80,20 @@ class CardHandler(BaseHandler):
         for i in range(0,len(entries)):
             if str(entries[i].ID) == str(cardid):
                 cardindex = i
-        self.render("card.html", entries=entries, cardid=cardid, cardindex=cardindex)
+        self.render("card.html", entries=entries, cardid=cardid, cardindex=cardindex,deckid=deckid)
+    def post(self):
+		print "test"
+		action = self.get_argument("action")
+		cardindex = self.get_argument("cardindex")
+		entries = self.get_argument("entries")
+		
+		if str(action) == "previous":
+			
+			self.redirect("card?deckid="+str(+"&cardid="+str(entries[indexminusone].ID))
+		else:
+			mindex = int(cardindex)
+			indexplusone = str(mindex + 1)
+			self.redirect("card?deckid="+str(entries[cardindex].DECKID)+"&cardid="+str(entries[indexplusone].ID))
            
 
 
