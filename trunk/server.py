@@ -12,8 +12,8 @@ from tornado.options import define, options
 define("port", default=8889, help="run on the given port", type=int)
 define("mysql_host", default="127.0.0.1:3306", help="default mysql host")
 define("mysql_database", default="ss12", help="default mysql database")
-define("mysql_user", default="", help="default mysql user")
-define("mysql_password", default="", help="default mysql password")
+define("mysql_user", default="ss12", help="default mysql user")
+define("mysql_password", default="ss12", help="default mysql password")
 
 class HomeHandler(tornado.web.RequestHandler):
     def get(self):
