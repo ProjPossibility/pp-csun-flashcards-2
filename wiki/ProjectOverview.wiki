@@ -8,21 +8,21 @@ Flashcards are incredibly useful study aids. For persons with cognitive and/or l
 = Details =
 
      = Requirements =
-       #Create, modify, and delete flashcards
-       #Support standard text and math equation
-       #Make a web app that is compatible with mobile device
-       #Be accessible to assistive technologies like text-to-speech
+       # Create, modify, and delete flashcards
+       # Support standard text and math equation
+       # Make a web app that is compatible with mobile device
+       # Be accessible to assistive technologies like text-to-speech
 
      = Designing and software =
-       NVDA for screen reading to support deaf users 
-       HTML, CSS,Java Script, JScript for web designing 
-       MySQL for database management 
-       Python - server side web scripting language
-       Tornado - python framework
+       # NVDA for screen reading to support deaf users 
+       # HTML, CSS,Java Script, JScript for web designing 
+       # MySQL for database management 
+       # Python - server side web scripting language
+       # Tornado - python framework
 
      = End User =
        Persons with cognitive/learning disabilities
 
      = Marketing =
-       Promote and create interest among students to create more
+       # Promote and create interest among students to create more
        accessible websites, software and devices. 
