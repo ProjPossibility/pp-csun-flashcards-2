@@ -16,7 +16,6 @@ mathcolor="blue"><mn></mn><mo>=</mo></mstyle></math></span>
 <script>
    $(document).ready(function(){
        $('#math_submit').click(function () {
-	   alert("clicked");
            $.get('/mathparse', {'text': $('#in').val()}, function (data) {
            $('#calc').show();     
            $('#calc').val(data);
