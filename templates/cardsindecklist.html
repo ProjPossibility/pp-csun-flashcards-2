@@ -1,29 +1,23 @@
 {% extends "base.html" %}
 {%block title%}Cards in Deck{%end%}
 {%block main%}
-<div id="add_button">
-     <li>
-                <a href="/newcard?deckid={{deckid}}">Add Card</a>
-    </li>
- </div>
-{% for entry in entries %}
-  <div class="list_class">
-    <div id="button_col">
-        <div class="mod_class">
-            <li>
-                <a href="/modcard?cardid={{entry.ID}}">Modify</a>
-            </li>
+<ul id="add_button">
+    <li><a href="/newcard?deckid={{deckid}}">Add Card</a></li>
+</ul>
+    {% for entry in entries %}
+    <div class="list_class">
+        <div id="button_col">
+            <ul class="mod_class">
+                <li><a href="/modcard?cardid={{entry.ID}}">Modify</a></li>
+            </ul>
+            <ul class="del_class">
+                <li><a href="confirmdelete?cardid={{entry.ID}}&amp;deckid={{entry.DECKID}}">Delete</a></li>
+            </ul>
         </div>
-        <div class="del_class">
-        <li>
-                <a href="confirmdelete?cardid={{entry.ID}}&deckid={{entry.DECKID}}">Delete</a>
-            </li>
-        </div>
-        </div>
-        <div >
-        <a href="card?deckid={{entry.DECKID}}&cardid={{entry.ID}}" class="decks_list_links">{{entry.QUESTION}}</a>
+        <div>
+            <a href="card?deckid={{entry.DECKID}}&amp;cardid={{entry.ID}}" class="decks_list_links">{{entry.QUESTION}}</a>
         </div>
         <br>
- </div>
-{% end %}
+    </div>
+    {% end %}
 {%end%}
