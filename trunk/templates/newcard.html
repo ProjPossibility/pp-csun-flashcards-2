@@ -2,7 +2,7 @@
 
 {% block main %}
 
-<form name="input" action="/newcard" method="post">
+<form name="input" action="{{request.path}}" method="post">
 
 <fieldset>
 <legend>Create a Card</legend>
