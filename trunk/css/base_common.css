@@ -26,6 +26,10 @@ a.decks_list_links{float:left; font-size: 27px;}
 textarea.decks_list_links{float:left; font-size: 27px; border:0px none;background-color: #870000; height: 35px; color: #ffffff}
 #question{position: relative; left: 40%}
 #whitetext,.whitetext_class{color: #FFFFFF;font-size: 22px;}
+#calc{position: left; height: 100%; width: 50%;)
+#out{position: bottom;height: 100%; width: 100%;)
+#in{position: left;height: 100%; width: 100%;)
+#math_submit{position: left;)
 
 #footerwrap { 
 }
