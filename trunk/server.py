@@ -23,26 +23,57 @@ class MathParser(tornado.web.RequestHandler):
 
 	def parseMathXL(self, inString):
 
-		def parse(x):
-			if x == '-':
-				return 'minus '
-			elif x == '*':
-				return 'times '
-			elif x == '/':
-				return 'divided by '
-			elif x == '(':
-				return 'open parentheses '
-			elif x == ')':
-				return 'close parentheses '
-			elif x == '^':
-				return 'to the power of '
-			else:
-				return x + " "
-
 		outString = ""
 
-		for i in range(len(inString)):
-			outString += parse(inString[i])
+		i = 0
+		while(i < len(inString)):
+
+			if inString[i] == '-':
+				outString +=  'minus '
+
+			elif inString[i] == '*':
+				outString +=  'times '
+
+			elif inString[i] == '+':
+				outString +=  'plus '
+
+			elif inString[i] == '/':
+				outString +=  'divided by '
+
+			elif inString[i] == '(':
+				outString +=  'open parentheses '
+
+			elif inString[i] == ')':
+				outString +=  'close parentheses '
+
+			elif inString[i] == '^':
+				outString +=  'to the power of '
+
+			elif inString[i] == 's' and inString[i+1] == 'q' and inString[i+2] == 'r' and inString[i+3] == 't':
+				outString +=  'the square root of '
+				i += 3
+
+			elif inString[i] == 'p' and inString[i+1] == 'i':
+				outString += 'pi '
+				i+=1
+
+			elif inString[i] == 's' and inString[i+1] == 'i' and inString[i+2] == 'n':
+				outString +=  'sine '
+				i += 2
+
+			elif inString[i] == 'c' and inString[i+1] == 'o' and inString[i+2] == 's':
+				outString +=  'cosine '
+				i += 2
+
+			elif inString[i] == 't' and inString[i+1] == 'a' and inString[i+2] == 'n':
+				outString +=  'tanget '
+				i += 2
+
+			else:
+				outString +=  inString[i] + " "
+	
+			i+=1
+
 
 		return outString
 
