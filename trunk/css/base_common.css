@@ -23,6 +23,7 @@ input.btn_menu{color:#FFFFFF; background-color: #262626;font: bold small 'trebuc
 #list_item,.list_class{ margin-top: 50px; margin-left: 80px}
 a.decks_list_links{float:left; font-size: 27px;}
 textarea.decks_list_links{float:left; font-size: 27px; border:0px none;background-color: #870000; height: 35px; color: #ffffff}
+#question{position: relative; left: 40%}
 
 #footerwrap { 
 }

@@ -1,16 +1,42 @@
 ﻿{% extends "base.html" %}
 {%block title%}Flash Card{%end%}
 {%block main%} <div id = "deckwrap"> 
-           <button id = "prev_card" value = "Previous" class="btn" )>Previous</button>
+			<form name="del" id = "prev_card" action="{{request.path}}" method="post">
+            <input type="hidden" value="{{entries}}" id="entries" name="entries">
+			<input type="hidden" value="{{cardindex}}" id ="cardindex" name="cardindex">
+           <button  type="submit" value = "previous" id="action" name="action" class="btn" >Previous</button>
+			</form>
+           
             <div id = "card">
                 <textarea id="card_text" tabindex="1" readonly="readonly">{{entries[cardindex].QUESTION}}</textarea>
             </div>
             <button id ="answer" value = "View Answer" class ="btn" >View Answer</button>
-           <button id = "next_card" value = "Next" class="btn">Next</button>
+            	<button id="question" class="btn" style="display: none">View Question</button>
+           			<form name="del" id = "next_card" action="{{request.path}}" method="post">
+            			<input type="hidden" value="{{cardindex}}" id ="cardindex" name="cardindex">
+            
+			<input type="hidden" value="{{entries}}" id="entries" name="entries">
+           <button  type="submit" value = "next" id="action" name="action" class="btn" >Next</button>
+			</form>
        </div>
        {%end%}
  {%block script%}
 	<script>
-    $('#button').click(function(){ document.getElementById(this).innerhtml='{{entries[0].ANSWER}}'});
+	
+    $('#answer').click(function(){ $("#card_text").val("{{entries[cardindex].ANSWER}}");
+                   $("#answer").attr('style', "display: none");
+                   $("#question").attr('style', "display: block");
+
+                 });
+    $('#question').click(function(){ $("#card_text").val("{{entries[cardindex].QUESTION}}");
+                   $("#question").attr('style', "display: none");
+                   $("#answer").attr('style', "display: block");
+
+                 });
+   
+    
+    $('#button').click(function(){ document.getElementById(this).innerhtml='{{entries[cardindex].ANSWER}}'});
+    if({{cardindex}}==0){ document.getElementById("prev_card").style.display= "none"  };
+    if({{cardindex}}==({{len(entries)-1}})){document.getElementById("next_card").style.display = "none" };
 	</script>
 {%end%}
