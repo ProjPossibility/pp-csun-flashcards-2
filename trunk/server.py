@@ -31,9 +31,9 @@ class MathParser(tornado.web.RequestHandler):
 			elif x == '/':
 				return 'divided by '
 			elif x == '(':
-				return 'open paranthesis '
+				return 'open parentheses '
 			elif x == ')':
-				return 'close paranthesis '
+				return 'close parentheses '
 			elif x == '^':
 				return 'to the power of '
 			else:
