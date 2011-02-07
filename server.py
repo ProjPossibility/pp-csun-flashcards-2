@@ -48,7 +48,7 @@ class MathParser(tornado.web.RequestHandler):
 
 	def get(self):
 		text = self.get_argument("text")
-		self.write('<textarea>'+self.parseMathXL(text)+'</textarea>')  
+		self.write(self.parseMathXL(text))  
 
 class BaseHandler(tornado.web.RequestHandler):
     @property
