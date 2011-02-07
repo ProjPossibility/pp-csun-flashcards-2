@@ -17,6 +17,7 @@ input.btn_menu{color:#FFFFFF; background-color: #262626;font: bold small 'trebuc
 #prev_card{float: left; position: relative; top: 45%}
 #next_card{float: right; position: relative; bottom: 117px; right: 5%}
 #answer{position: relative; left: 40%}
+#question{position: relative; left: 40%}
 #modify,.mod_class, #add_button{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 100px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
 #delete,.del_class, .view_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 100px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
 #newcard,.newcard_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 88px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
