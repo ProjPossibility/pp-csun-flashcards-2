@@ -1,27 +1,20 @@
 {% extends "base.html" %}
 {%block title%}Deck List{%end%}
 {%block main%}
-    <div id="add_button">
-        <li>
-        <a href="/newdeck">Add Deck</a>
-        </li>
-    </div>
+    <ul id="add_button">
+        <li><a href="/newdeck">Add Deck</a></li>
+    </ul>
     {% for entry in entries %}
         <div class="list_class">
             <div id="button_col">
-
-                <div class="del_class">
-                    <li>
-                    <a href="confirmdelete?deckid={{entry.ID}}">Delete</a>
-                    </li>
-                </div>
-                <div class="view_class">
-                    <li>
-                    <a href="cardsindecklist?deckid={{entry.ID}}">View Deck</a>
-                    </li>
-                </div>
+                <ul class="del_class">
+                    <li><a href="confirmdelete?deckid={{entry.ID}}">Delete</a></li>
+                </ul>
+                <ul class="view_class">
+                    <li><a href="cardsindecklist?deckid={{entry.ID}}">View Deck</a></li>
+                </ul>
             </div>
-            <div >
+            <div>
                 <textarea class="decks_list_links" readonly="readonly">{{entry.NAME}}</textarea>
             </div>
             <br>
