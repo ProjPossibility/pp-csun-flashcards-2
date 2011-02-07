@@ -115,14 +115,16 @@ class CardHandler(BaseHandler):
     def post(self):
 		print "test"
 		action = self.get_argument("action")
-		cardindex = self.get_argument("cardindex")
+		cardindex = int(self.get_argument("cardindex"))
 		deckid = self.get_argument("deckid")
 		print str(deckid)
 		entries = self.db.query("SELECT * FROM CARDS WHERE DECKID=%s", deckid)
-		
+		print str(len(entries))
 		if str(action) == "previous":
 			self.redirect("card?deckid="+str(deckid)+"&cardid="+str(entries[cardindex-1].ID))
-		
+		else:
+			self.redirect("card?deckid="+str(deckid)+"&cardid="+str(entries[cardindex+1].ID))
+			
 class NewDeckHandler(BaseHandler):
    	def get(self):
 		self.render("newdeck.html")
