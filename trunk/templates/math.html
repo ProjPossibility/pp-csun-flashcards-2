@@ -11,11 +11,16 @@ mathcolor="blue"><mn></mn><mo>=</mo></mstyle></math></span>
 
 <button id="math_submit">Submit</button>
 
+<textarea id="calc" style="display:none;">  </textarea>
+
 <script>
    $(document).ready(function(){
        $('#math_submit').click(function () {
+	   alert("clicked");
            $.get('/mathparse', {'text': $('#in').val()}, function (data) {
-               console.log(data);
+           $('#calc').show();     
+           $('#calc').val(data);
+	   console.log(data);
            });
        });
    });
