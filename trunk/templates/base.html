@@ -1,11 +1,11 @@
 ﻿<!DOCTYPE html>
+<html>
+<head>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-min.css">
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.3.0/build/cssreset/reset-context-min.css">
 <LINK rel="stylesheet" type="text/css"
 href="{{static_url("base_common.css")}}"/> 
 <META content="charset=utf-8" />
-<html>
-<head>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js"></script>
     <title>{%block title%}{%end%}</title>
 </head>
@@ -16,7 +16,19 @@ href="{{static_url("base_common.css")}}"/>
 </div>
  <div id ="maincontent">
  <div id = "left_col"></div>
- <div id="right_col"></div>
+ <div id="right_col">
+	<ul class="nav">
+		<li>
+			<a href="/" title="Home">Home</a>
+		</li>
+		<li>
+			<a href="/newdeck" title="CreateADeck">Create a Deck</a>
+		</li>
+		<li>
+			<a href="/deckslist" title="myDecks">My Decks</a>
+		</li>
+	</ul>
+</div>
        {%block main%}{%end%}
 </div>
 <div id = "footerwrap">
