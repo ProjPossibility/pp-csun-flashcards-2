@@ -8,10 +8,10 @@ Flashcards are incredibly useful study aids. For persons with cognitive and/or l
 = Details =
 
      = Requirements =
-       1.Create, modify, and delete flashcards
-       2.Support standard text and math equation
-       3.Make a web app that is compatible with mobile device
-       4.Be accessible to assistive technologies like text-to-speech
+       Create, modify, and delete flashcards
+       Support standard text and math equation
+       Make a web app that is compatible with mobile device
+       Be accessible to assistive technologies like text-to-speech
 
      = Designing and software =
        NVDA for screen reading to support deaf users 
