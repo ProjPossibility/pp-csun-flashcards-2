@@ -2,7 +2,7 @@
 {%block title%}Flash Card{%end%}
 {%block main%} <div id = "deckwrap"> 
 			<form name="del" id = "prev_card" action="{{request.path}}" method="post">
-            <input type="hidden" value="{{entries}}" id="entries" name="entries">
+            <input type="hidden" value="{{deckid}}" id="deckid" name="deckid">
 			<input type="hidden" value="{{cardindex}}" id ="cardindex" name="cardindex">
            <button  type="submit" value = "previous" id="action" name="action" class="btn" >Previous</button>
 			</form>
@@ -15,7 +15,7 @@
            			<form name="del" id = "next_card" action="{{request.path}}" method="post">
             			<input type="hidden" value="{{cardindex}}" id ="cardindex" name="cardindex">
             
-			<input type="hidden" value="{{entries}}" id="entries" name="entries">
+			<input type="hidden" value="{{deckid}}" id="deckid" name="deckid">
            <button  type="submit" value = "next" id="action" name="action" class="btn" >Next</button>
 			</form>
        </div>
