@@ -1,41 +1,14 @@
-﻿html {background-color: #870000}
-h1 { color: #FFFFFF; font-size: 25px;}
-a{ text-decoration: none; color: #FFFFFF }
-#header {float: left; width: 100%; background-color: #262626}
-input.btn{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; }
-input.btn_menu{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 43px; margin: 30px 30px 30px 30px}
-#mydecks{float: left;}
-#create{cursor: default; color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 43px; margin: 30px 30px 30px 30px; width: 210px; border: 3px solid white}
-#mydecks{cursor: default; color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 43px; margin: 30px 30px 30px 30px; width: 210px; border: 3px solid white}
-#right_col{background-color: #262626; height: 100%; width: 90px; float: right}
-#left_col{background-color: #262626; height: 100%; width: 71px; float: left}
-#button_wrap{position: relative; top: 129px; left: 42%; width: 0}
-#maincontent {float: left; display: block; width: 100%; height: 100%; background-color: #870000}
-#deckwrap {margin-left: auto; margin-right: auto;  height: 200px; width: 650px; position: relative; top: 21%}
-#card {left: 13%; height: 100%; position: relative; text-align: center; background-color: White; width: 73%; border: 3px #000000 solid}
-#card_text{top:45%; position: relative; left: -9% ; border: 0; background-color: #fff;}
-#prev_card{float: left; position: relative; top: 45%}
-#next_card{float: right; position: relative; bottom: 117px; right: 5%}
-#answer{position: relative; left: 40%}
-#question{position: relative; left: 40%}
-#modify,.mod_class, #add_button{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 100px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
-#delete,.del_class, .view_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 100px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
-#newcard,.newcard_class{color:#FFFFFF; background-color: #262626;font: bold small 'trebuchet ms',helvetica,sans-serif; font-size: 18px; width: 88px; float: left; margin-left: 10px; margin-right: 10px; border: 3px solid white}
-#list_item,.list_class{ margin-top: 50px; margin-left: 80px}
-a.decks_list_links{float:left; font-size: 27px;}
-textarea.decks_list_links{float:left; font-size: 27px; border:0px none;background-color: #870000; height: 35px; color: #ffffff}
-#question{position: relative; left: 40%}
-#whitetext,.whitetext_class{color: #FFFFFF;font-size: 22px;}
-#calc{position: left; height: 100%; width: 50%;)
-#out{position: bottom;height: 100%; width: 100%;)
-#in{position: left;height: 100%; width: 100%;)
-#math_submit{position: left;)
+﻿body {font-family:Helvetica, Arial, sans-serif;font-size: 12px;text-shadow: rgba(0,0,0,.01) 0 0 1px;text-shadow: #fff 0px 1px 0px;letter-spacing:-0.035em;color:#292929;}
+a { text-decoration: none; color: #333;}
+a:hover { text-decoration: underline; color: #888; }
+h1, h2, h3, h4, h5, h6 { font-family:"Courier New", Courier, monospace; }
+p { font-size: 1.5em; padding: 10px; }
+header nav ul { float: right; }
+header nav ul li { font-size: 2em; float: left; padding: 7px; border: 1px solid #666;}
+h1#main-logo a { font-size: 4em; padding: 10px; }
+h1.heading { font-size: 3em; padding: 10px; }
+div.form form fieldset { margin-bottom: 10px; }
+div.form form fieldset legend { padding: 0 2px; font-weight: bold; }
+div.form form fieldset label { display: inline-block; line-height: 1.8; vertical-align: top; width: 120px; }
+div.form form fieldset li { padding: 5px; margin: 0; }
 
-#footerwrap { 
-}
-
-div#footer {
-}
-
-#footer #info {
-}
