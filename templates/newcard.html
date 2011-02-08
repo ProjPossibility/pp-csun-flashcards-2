@@ -1,19 +1,19 @@
 {% extends "base.html" %}
 
 {% block main %}
+<div class="form">
+    <form name="input" action="{{request.path}}" method="post">
 
-<form name="input" action="{{request.path}}" method="post">
+        <fieldset>
+            <legend class="whitetext_class">Create a Card</legend>
+            <ul>
+                <li><label for="cardquestion" class="whitetext_class">Question: </label><input id="cardquestion" type="text" title="Enter your question" name="cardquestion" /></li>
+                <li><label for="cardanswer" class="whitetext_class">Answer: </label><input id="cardanswer" type="text" title="Enter your answer" name="cardanswer" /></li>
+                <li><input type="hidden" value="{{deckid}}" id="deckid" name="deckid"></li>
+                <li><input type="submit" value="Create" /></li>
+            </ul>
+        </fieldset>
 
-<fieldset>
-<legend class="whitetext_class">Create a Card</legend>
-<label for="cardquestion" class="whitetext_class">Question: </label><input id="cardquestion" type="text" name="cardquestion" />
-<br>
-<label for="cardanswer" class="whitetext_class">Answer: </label><input id="cardanswer" type="text" name="cardanswer" />
-<br>
-<input type="hidden" value="{{deckid}}" id="deckid" name="deckid">
-<input type="submit" value="Create" />
-</fieldset>
-
-</form> 
-
+    </form> 
+</div>
 {% end %}
